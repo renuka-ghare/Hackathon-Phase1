@@ -11,60 +11,55 @@ Welcome to the **Online Shop** project – our hackathon entry for Phase 1! This
 - **Linux**
 - **Docker**
 
-In this phase, your focus is on understanding the provided developer code, reviewing how these core topics are implemented, and making any necessary enhancements. When you're ready, you'll submit your work via our designated Google Form.
+## Project Overview
+
+This repository contains my submission for Phase 1 of the Online Shop Hackathon. The primary goal was to containerize the application using Docker, resolve build issues related to missing crypto libraries, and ensure seamless deployment. This project demonstrates my competence in Git, GitHub, Linux, and Docker.
+
+---
+## Key Goals Achieved
+
+-   Containerized the online shop application using Docker.
+-   Addressed compatibility issues and resolved errors during the Docker image build.
+-   Documented all steps and considerations in the README.
 
 ---
 
-## Important Dates
+## 1.  **Dockerization**
 
-- **Hackathon Start Date:** 20th Feb, 9:00 AM
-- **Hackathon End Date:** 21st Feb, 9:00 AM
-- **Submission Deadline:** 24 hours after the repository link is shared
+    *   Created a `Dockerfile` tailored for the application, ensuring all dependencies were included.
+    *   Leveraged multi-stage builds to reduce the size of the final image.
+    *   Verified successful deployment of the application within a Docker container.
 
+    Commands used:
+        -   `docker build -t online_shop_app .`
+        -   `docker run -d -p 80:80 online_shop_app`
+
+## 2.  **Addressing the Crypto Error**
+
+    *   Identified the `crypto`-related error during `npm run build` within the container.
+    *   Implemented the solution by updating the Node version to a more recent version that includes the `crypto` libraries.
+    *   Justification for implementation: Simplest method with less code changes. The other methods might require code modification or other more complex configurations.
+
+## 3.  **Nginx Integration (as Reverse Proxy)**
+
+    *   Setup reverse proxy
 ---
 
-## Table of Contents
-- [Important Dates](#important-dates)
-- [Overview](#overview)
-- [Guidelines & Resources](#guidelines--resources)
-- [Tasks](#tasks)
-- [Submission Instructions](#submission-instructions)
-- [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
-- [Evaluation Criteria](#evaluation-criteria)
-- [License](#license)
-- [Contact](#contact)
+## Challenges Faced
 
+-   Difficulty in the configuration with libraries related to crypto
+-   Setting up reverse proxy can be a bit overwhelming since there is so much to configure.
 
+## Lessons Learned
 
+-   Debugging Docker build issues often requires a deep understanding of Node.js package dependencies.
+-   Efficient Dockerization is crucial for maintaining application performance.
+-   Importance on using reverse proxy instead of serving content directly.
 ---
 
-## Overview
+## Branch Information
 
-The **Online Shop** project is a demo e-commerce application designed for Hackathon Phase 1. It serves as a platform to showcase best practices in code quality, development workflows, and system design with a focus on:
-
-- **Git & GitHub:** Effective version control, branching strategies, and collaborative workflows.
-- **Linux:** Command-line operations, system administration, and file management.
-- **Docker:** Principles of containerization and preparing code for deployment in a containerized environment.
-
-Your task is to familiarize yourself with the code, make enhancements if necessary, and ensure your final submission reflects your understanding of these topics.
-
----
-
-## Guidelines & Resources
-
-Before diving into the tasks, please review the following key resources:
-
-- [CONTRIBUTING.md](CONTRIBUTING.md): Guidelines for code contributions, commit messages, and overall coding standards.
-- [ROADMAP.md](ROADMAP.md): Insights into the project vision, future enhancements, and milestones.
-- **Repository Documentation:** Explore the repository to understand how the application is built. Pay special attention to the `src` directory where the main application logic resides, as well as configuration files such as `vite.config.js` and styling in `index.css`.
-
-These documents provide the context needed to understand the project requirements and the best practices expected for your contributions.
-
----
-
-## Tasks
-
-For this hackathon phase, your work will center around the following tasks:
+This submission is located in the `Renuka_Dockerfile_For_Hackathon` branch.
 
 ### Git & GitHub
 
@@ -85,116 +80,4 @@ For this hackathon phase, your work will center around the following tasks:
 - **Code Readiness:** Ensure the codebase is structured in a way that aligns with Docker best practices, preparing it for eventual containerized deployment on AWS EC2 / Azure VM / Google Compute Engine (Your Choice of Cloud).
 
 ---
-> [!IMPORTANT]
-> ## Submission Instructions
-> 
-> When you have completed your work, please follow these steps for submission:
->
-> 1. **Review & Test Your Work:**
->    
->    - Make sure all changes are committed and pushed to your GitHub repository (or branch). Test the application thoroughly to confirm that your enhancements do not break existing functionality.
->    
-> 2. **Prepare Your Submission:**
->    
->    -  Gather your full name, email address, and the URL to your GitHub repository (or the specific branch/commit that contains your work).
->    -  Make sure to add Demo video(which should be publically accessible) explaining your implementations for the project. This is the important aspect for evaluation. The Videos / Articles / Submissions should be submitted to the google form as well as shared on your LinkedIn/ twitter for extra points.
->    
-> 3. **Submit via Google Form:**
->    
->    - Complete the submission form here:
->    
->    [Submit Your Work](https://docs.google.com/forms/d/e/1FAIpQLSdtOttzC9M__5ysJ_prVT1MtmV0qh1_PXrI5aYfd3zQNCF-CA/viewform?usp=header)
->    
-> 4. **Timely Submission:**
->    
->    - Ensure that your submission is completed before the hackathon deadline. Late submissions will not be eligible for prizes.
->    
-
----
-
-## Submission Details for Your Repo README
-
-When submitting your repository link, your README must include:
-
-- **Project Title & Overview:**
-    
-    Clearly state the project name (e.g., "Online Shop – Hackathon Phase 1 Submission") and provide a brief overview of your solution, emphasizing how it addresses Git & GitHub, Linux, and Docker.
-    
-- **Task Descriptions & Implementations:**
-    
-  -  Describe the tasks you worked on. Detail how you managed your repository, the Linux commands or scripts you used, and any improvements or suggestions regarding Docker integration.
-
-> [!NOTE]
->
->  -  Provide video demo link (3-5 minutes only, not more than 5 minutes)
-
-- **Key Changes & Enhancements:**
-    
-    Highlight the major changes or enhancements you made, including any refactoring, feature additions, or optimizations, along with documentation updates.
-    
-- **Final Submission Statement:**
-    
-    Include a clear declaration that this repository (or branch) represents your final submission for Hackathon Phase 1.
-    
-- **Version or Branch Information:**
-    
-    Specify which branch or commit should be reviewed (e.g., "Final submission branch: `final-phase1`").
-    
-
-Make sure this information is visible in your repository's README so that evaluators can easily review your work.
-
----
-
-## Evaluation Criteria
-
-Submissions will be evaluated based on the following criteria:
-
-- **Adherence to Guidelines:**
-    
-    Your work should comply with the project’s coding standards, documentation, and contribution guidelines as described in this README and the [CONTRIBUTING.md](http://contributing.md/) file.
-    
-- **Git & GitHub Proficiency:**
-    
-    Evaluation of your version control practices, including branching strategy, commit quality, and pull request process.
-    
-- **Linux Competence:**
-    
-    Demonstrated ability to effectively use Linux for system administration tasks, scripting, and command-line operations within the project.
-    
-- **Docker Readiness:**
-    
-    Although a Dockerfile is not provided, your documentation and code structure should reflect an understanding of containerization best practices and readiness for future Docker integration.
-    
-- **Quality of Enhancements:**
-    
-    The significance and quality of your improvements, refactoring, and overall impact on the project’s functionality.
-    
-- **Documentation & Clarity:**
-    
-    Clear and concise documentation that explains your work, including details in your repository README about your tasks and changes.
-    
-- **Timeliness:**
-    
-    Your submission must be completed and submitted before the hackathon deadline.
-    
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
-
----
-
-## Contact
-
-For any questions or further information, please contact:
-
-- **Email:** [iemafzalhassan@gmail.com](mailto:iemafzalhassan@gmail.com) , [amitabhdevops2024@gmail.com](mailto:iemafzalhassan@gmail.com) , [deveshagent@gmail.com](mailto:deveshagent@gmail.com)
-- [Join Discord Server](https://discord.gg/4JtuMhMcjn)
-
----
-
-Good luck for the hackathon
-
 Happy Learning :)
